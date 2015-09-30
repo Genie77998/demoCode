@@ -5,9 +5,18 @@ module.exports = function(grunt) {
     grunt.initConfig({
     	_file : grunt.file.readJSON('_file.json'),
         pkg: grunt.file.readJSON('package.json'),
+        init : function(){
+            var _me = this;
+            console.log(grunt.file.isDir(_me._file.app),_me._file.app);
+            if(!grunt.file.isDir(_me._file.app)){
+                return 'lyq';
+            }else{
+                return _me._file.app;
+            }
+        },
         config: {
             filePath: {
-                cwd: '<%= _file.app %>/App/',  //开发目录名
+                cwd: '<%= init() %>/App/',  //开发目录名
                 dest: 'dist/'  //压缩目录名
             },
             version: new Date().toString()
