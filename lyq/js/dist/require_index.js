@@ -1,8 +1,8 @@
 require(
     [
-        "http://code.jquery.com/jquery-1.8.3.min.js",
-        "js/base/swiper.min.js",
-        "js/lib/base.js"
+        "../base/jquery",
+        "../base/swiper.min",
+        "../lib/base"
     ],
     function() {
         $(function() {
