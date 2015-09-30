@@ -1,0 +1,29 @@
+{
+  "name": "demoCode",
+  "version": "1.0.0",
+  "author": "wangwenjun,linyuqun",
+  "private": true,
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Genie77998/demoCode.git"
+  },
+  "devDependencies": {
+    "connect-livereload": "latest",
+    "grunt": "latest",
+    "grunt-cmd-transport": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jpegtran-bin": "latest",
+    "matchdep": "latest",
+    "time-grunt": "latest"
+  }
+}
