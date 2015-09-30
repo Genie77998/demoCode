@@ -7,7 +7,6 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         init : function(){
             var _me = this;
-            console.log(grunt.file.isDir(_me._file.app),_me._file.app);
             if(!grunt.file.isDir(_me._file.app)){
                 return 'lyq';
             }else{
