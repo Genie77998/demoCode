@@ -1,4 +1,7 @@
-(function($) {
+define([
+    "../com/zepto.min"
+], function() {
+    (function($) {
         $.fn.dajishi = function(options) { //倒计时插件
             var _this = this,
                 defaults = {
@@ -8,7 +11,7 @@
                     second_save_elem: '.second', //存放秒钟
                     second_delay_save_elem: '.second_delay', //存放毫秒
                     callback: function() { //倒计时结束回调
-                       $(this).html('<strong style="color:red;">活动已结束<strong>');
+                        $(this).html('<strong style="color:red;">活动已结束<strong>');
                     }
                 },
                 ops = $.extend(defaults, options);
@@ -30,11 +33,11 @@
                             var hour = Math.floor(sys_second / 3600),
                                 minute = Math.floor((sys_second / 60) % 60),
                                 second = Math.floor(sys_second % 60),
-                                second_delay = Math.floor(sys_second*100%100).toString().substr(0,1);
+                                second_delay = Math.floor(sys_second * 100 % 100).toString().substr(0, 1);
                             hour_elem && $(hour_elem).text(hour < 10 ? "0" + hour : hour); //计算小时
                             minute_elem && $(minute_elem).text(minute < 10 ? "0" + minute : minute); //计算分钟
                             second_elem && $(second_elem).text(second < 10 ? "0" + second : second); //计算秒钟
-                            second_delay_elem && $(second_delay_elem).text(second_delay < 10 ? "0" + second_delay : second_delay);//存放毫秒
+                            second_delay_elem && $(second_delay_elem).text(second_delay < 10 ? "0" + second_delay : second_delay); //存放毫秒
                         } else {
                             clearInterval(timer);
                             typeof ops.callback && ops.callback.constructor === Function && ops.callback.call(_me);
@@ -47,4 +50,5 @@
             });
             return this;
         };
-    })(jQuery);
+    })(Zepto);
+});

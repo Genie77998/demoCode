@@ -1,8 +1,8 @@
 require(
     [
-        "../base/jquery",
-        "../base/swiper.min",
-        "../lib/base"
+        "../com/zepto.min",
+        "../lib/swiper.min",
+        "../lib/plungs"
     ],
     function() {
         $(function() {
