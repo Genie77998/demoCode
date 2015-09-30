@@ -62,19 +62,6 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        cssmin: {//压缩css文件
-            dist: {
-                options: {
-                    report: 'gzip'
-                },
-                files: [{
-                    expand: true, //相对路径
-                    cwd: '<%=config.filePath.cwd%>', //路劲
-                    src: '**/*.css', //文件
-                    dest: '<%=config.filePath.dest%>' //输出路劲
-                }]
-            }
-        },
         watch : {//监听sass
             scss: {
                 files: ['<%=config.filePath.cwd%>/**/*.scss'],
@@ -131,6 +118,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['clean:dev','copy','sass:build','uglify', 'imagemin', 'cssmin','clean:clear']); //生成发布版本
+    grunt.registerTask('default', ['clean:dev','copy','sass:build','uglify', 'imagemin','clean:clear']); //生成发布版本
     grunt.registerTask('dev', ['clean:dev','sass:dev','watch']);  //清除发布的目录  编译开发版本css  监听sass文件变化实时编译
 };
