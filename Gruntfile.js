@@ -2,16 +2,16 @@ module.exports = function(grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     require('time-grunt')(grunt);
     grunt.file.defaultEncoding = 'utf-8';
-    var config = {
-        filePath: {
-            cwd: 'lyq/App/',  //开发目录名
-            dest: 'dev/'  //压缩目录名
-        },
-        version: new Date().toString()
-    };
     grunt.initConfig({
+    	_file : grunt.file.readJSON('_file.json'),
         pkg: grunt.file.readJSON('package.json'),
-        config: config,
+        config: {
+            filePath: {
+                cwd: '<%= _file.app %>/App/',  //开发目录名
+                dest: 'dist/'  //压缩目录名
+            },
+            version: new Date().toString()
+        },
         imagemin: { // 压缩图片
             dist: {
                 options: {
